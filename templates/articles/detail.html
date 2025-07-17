@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="margin-top: 30px;">
+    {% if object %}
+        <article style="max-width: 800px; margin: 0 auto;">
+            <h1>{{ object.title }}</h1>
+            <div style="margin: 20px 0; padding: 20px; background-color: #f8f9fa; border-radius: 5px;">
+                <p style="line-height: 1.6;">{{ object.content }}</p>
+            </div>
+            <small style="color: #666;">Article ID: {{ object.id }}</small>
+            <div style="margin-top: 20px;">
+                <a href="{% url 'article_search' %}" style="color: #007bff; text-decoration: none;">← Back to Search</a>
+            </div>
+        </article>
+    {% else %}
+        <div style="text-align: center; margin-top: 50px;">
+            <h2>Article Not Found</h2>
+            <p>The article you're looking for doesn't exist.</p>
+            <a href="{% url 'home' %}" style="color: #007bff; text-decoration: none;">Go Home</a>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

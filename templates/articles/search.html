@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="margin-top: 30px;">
+    <h2>Search Results</h2>
+
+    {% if query %}
+        <p>Search query: "<strong>{{ query }}</strong>"</p>
+
+        {% if object %}
+            <div style="border: 1px solid #ddd; padding: 15px; margin: 20px 0; border-radius: 5px;">
+                <h3><a href="{% url 'article_detail' object.id %}">{{ object.title }}</a></h3>
+                <p>{{ object.content|truncatewords:50 }}</p>
+                <small>Article ID: {{ object.id }}</small>
+            </div>
+        {% else %}
+            <p style="color: #666;">No articles found matching your search.</p>
+        {% endif %}
+    {% else %}
+        <p style="color: #666;">Enter a search term to find articles.</p>
+    {% endif %}
+</div>
+
+{% endblock %}
