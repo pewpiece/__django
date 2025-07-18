@@ -18,14 +18,14 @@ A simple Django-based web application demonstrating basic project structure, use
 
 ```
 
-\_\_django/
-├── accounts/           # Handles user registration and login
-├── articles/           # Article model, views, and forms
-├── templates/          # Global templates (base.html, etc.)
-├── .venv/              # Virtual environment (not tracked)
-├── db.sqlite3          # Default database
-├── manage.py           # Django project management tool
-└── static/             # Static files (CSS, JS, images)
+__django/
+├── accounts/ # Handles user registration and login
+├── articles/ # Article model, views, and forms
+├── templates/ # Global templates (base.html, etc.)
+├── .venv/ # Virtual environment (not tracked)
+├── db.sqlite3 # Default database
+├── manage.py # Django project management tool
+└── static/ # Static files (CSS, JS, images)
 
 ````
 
