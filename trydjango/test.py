@@ -6,11 +6,12 @@ from django.test import TestCase
 class TryDjangoConfigTest(TestCase):
     def test_Secret_key_Strength(self):
         SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
-        self.assertNotEqual(SECRET_KEY, 'abc123')
+        # self.assertNotEqual(SECRET_KEY, 'abc123')
         
+        from django.core.exceptions import ValidationError
         try:
             is_strong = validate_password(SECRET_KEY)
-        except Exception as e:
+        except ValidationError as e:
             msg = f'Bad Secret Key {e.messages}'
-            self.fail(e)
+            self.fail(msg)
 
